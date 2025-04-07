@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitorando</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    {% block 'head' %}{% endblock 'head' %}
+</head>
+<body>
+    {% block 'body' %}{% endblock 'body' %}
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    
+        menuToggle.addEventListener('mouseover', function() {
+            menuToggle.style.backgroundColor = '#e2e8f0';
+            menuToggle.style.color = '#1a202c';
+        });
+    
+        menuToggle.addEventListener('mouseout', function() {
+            menuToggle.style.backgroundColor = '';
+            menuToggle.style.color = '';
+        });
+
+        const menuItems = document.querySelectorAll('.menu-item');
+    
+        menuItems.forEach(item => {
+            item.addEventListener('mouseover', function() {
+                item.style.backgroundColor = '#1E2939';
+                item.style.color = 'white';
+            });
+    
+            item.addEventListener('mouseout', function() {
+                item.style.backgroundColor = '';
+                item.style.color = '';
+            });
+        });
+    </script>
+</body>
+</html>
